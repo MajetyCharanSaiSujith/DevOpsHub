@@ -90,73 +90,12 @@ function LoginContent() {
           </p>
         </div>
 
-        {/* Cloud Status Pill */}
-        <div className="mb-4 flex items-center justify-between p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs">
-          <div className="flex items-center gap-2">
-            <span
-              className={`w-2 h-2 rounded-full ${
-                config.isConfigured ? 'bg-emerald-400 ring-2 ring-emerald-500/20' : 'bg-amber-400'
-              }`}
-            />
-            <span className="text-slate-300 font-medium">
-              {config.isConfigured ? 'Connected to Supabase Cloud' : 'Local Auth Mode'}
-            </span>
+        {/* Connected Badge (only shows if already connected) */}
+        {config.isConfigured && (
+          <div className="mb-4 flex items-center justify-center gap-2 p-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-400">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-emerald-500/20" />
+            <span className="font-medium">Connected to Supabase Cloud</span>
           </div>
-          <button
-            onClick={() => setShowConfig(!showConfig)}
-            className="text-[11px] text-indigo-400 hover:text-indigo-300 underline"
-          >
-            {showConfig ? 'Hide Config' : 'Configure Cloud Keys'}
-          </button>
-        </div>
-
-        {/* Cloud Keys Config Drawer */}
-        {showConfig && (
-          <form
-            onSubmit={handleSaveConfig}
-            className="mb-4 p-4 rounded-xl bg-slate-900/95 border border-indigo-500/30 text-xs space-y-3"
-          >
-            <div className="flex items-center gap-2 text-indigo-400 font-semibold">
-              <Database className="w-4 h-4" />
-              <span>Connect Supabase Project</span>
-            </div>
-            <p className="text-[11px] text-slate-400">
-              Input your Supabase project credentials. Find them under Supabase Settings ➔ API.
-            </p>
-            <div>
-              <label className="text-[10px] uppercase font-mono text-slate-400">Project URL</label>
-              <input
-                type="text"
-                value={supabaseUrl}
-                onChange={(e) => setSupabaseUrl(e.target.value)}
-                placeholder="https://xyzcompany.supabase.co"
-                className="w-full px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 mt-1 font-mono text-xs focus:outline-none focus:border-indigo-500"
-              />
-            </div>
-            <div>
-              <label className="text-[10px] uppercase font-mono text-slate-400">Anon Public Key</label>
-              <input
-                type="password"
-                value={supabaseKey}
-                onChange={(e) => setSupabaseKey(e.target.value)}
-                placeholder="eyJhbGciOi..."
-                className="w-full px-3 py-1.5 bg-slate-800 border border-slate-700 rounded-lg text-slate-200 mt-1 font-mono text-xs focus:outline-none focus:border-indigo-500"
-              />
-            </div>
-            <div className="flex items-center justify-between pt-1">
-              {configSuccess && (
-                <span className="text-emerald-400 text-[11px] flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5" /> Saved!
-                </span>
-              )}
-              <button
-                type="submit"
-                className="ml-auto px-3 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-medium"
-              >
-                Save Supabase Keys
-              </button>
-            </div>
-          </form>
         )}
 
         {/* Main Card */}
