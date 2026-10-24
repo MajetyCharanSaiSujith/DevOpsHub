@@ -136,10 +136,10 @@ export default function AppHeader({ onToggleMobile = () => {} }) {
         {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
-          title={`Switch to ${theme === 'dark' ? 'Light' : 'Dark'} Mode`}
-          className="p-2 text-slate-400 hover:text-slate-200 rounded-xl hover:bg-slate-800/60 transition-colors"
+          title={`Switch to ${theme === 'dark' ? 'Realistic Light' : 'GitHub Dark'} Mode`}
+          className="p-2 text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
         >
-          {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-400" />}
+          {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
         </button>
 
         {/* Notifications Dropdown */}

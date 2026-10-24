@@ -186,6 +186,18 @@ export function AppProvider({ children }) {
     }
   }, [isLoaded, user, projects, tasks, repositories, deployments, activities, profile, getActiveStorageKey]);
 
+  // Read saved theme on startup, default to dark
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedTheme = window.localStorage.getItem('devopshub_theme');
+      if (storedTheme === 'dark' || storedTheme === 'light') {
+        setThemeState(storedTheme);
+      } else {
+        setThemeState('dark');
+      }
+    }
+  }, []);
+
   // Apply theme to document
   useEffect(() => {
     if (typeof document === 'undefined') return;
@@ -495,6 +507,9 @@ export function AppProvider({ children }) {
   const setTheme = useCallback((newTheme) => {
     setThemeState(newTheme);
     setProfile((prev) => ({ ...prev, theme: newTheme }));
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('devopshub_theme', newTheme);
+    }
   }, []);
 
   const toggleTheme = useCallback(() => {

@@ -22,7 +22,7 @@ export default function StatCard({
   };
 
   const cardContent = (
-    <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700/80 transition-all hover:shadow-xl hover:shadow-indigo-500/5 group relative overflow-hidden">
+    <div className="p-5 rounded-2xl bg-white dark:bg-[#161b22] border border-slate-200 dark:border-[#30363d] hover:border-indigo-400 dark:hover:border-slate-700 transition-all hover:shadow-md group relative overflow-hidden">
       <div className="flex items-center justify-between">
         <span className="text-xs font-medium text-slate-400 tracking-wide">{title}</span>
         {Icon && (

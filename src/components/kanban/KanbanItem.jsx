@@ -52,10 +52,10 @@ export default function KanbanItem({
       style={style}
       className={`p-3.5 rounded-xl border transition-all cursor-pointer group relative select-none ${
         isOverlay
-          ? 'bg-slate-800 border-indigo-500 shadow-2xl scale-105 rotate-1 z-50'
+          ? 'bg-white dark:bg-[#161b22] border-indigo-500 shadow-lg scale-105 rotate-1 z-50'
           : overdue
-          ? 'bg-slate-900/90 border-rose-500/30 hover:border-rose-500/60'
-          : 'bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:shadow-md'
+          ? 'bg-white dark:bg-[#161b22] border-rose-300 dark:border-rose-500/30 hover:border-rose-500 shadow-sm'
+          : 'bg-white dark:bg-[#161b22] border-slate-200 dark:border-[#30363d] hover:border-indigo-400 dark:hover:border-slate-600 shadow-sm'
       }`}
       onClick={onClick}
     >

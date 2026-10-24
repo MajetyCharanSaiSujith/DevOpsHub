@@ -18,8 +18,8 @@ export default function TaskCard({
       onClick={onClick}
       className={`p-4 rounded-xl border transition-all cursor-pointer group select-none ${
         overdue
-          ? 'bg-slate-900/80 border-rose-500/30 hover:border-rose-500/60'
-          : 'bg-slate-900/60 border-slate-800/80 hover:border-slate-700 hover:shadow-lg hover:shadow-indigo-500/5'
+          ? 'bg-white dark:bg-[#161b22] border-rose-300 dark:border-rose-500/30 hover:border-rose-500 shadow-sm'
+          : 'bg-white dark:bg-[#161b22] border-slate-200 dark:border-[#30363d] hover:border-indigo-400 dark:hover:border-slate-700 shadow-sm'
       }`}
     >
       <div className="flex items-start justify-between gap-2 mb-2">

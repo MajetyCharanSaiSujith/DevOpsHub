@@ -41,25 +41,25 @@ export default function KanbanColumn({
   return (
     <div
       ref={setNodeRef}
-      className={`flex flex-col flex-1 min-w-[270px] max-w-sm rounded-2xl bg-slate-900/50 border transition-all ${
+      className={`flex flex-col flex-1 min-w-[270px] max-w-sm rounded-2xl bg-slate-100/70 dark:bg-[#161b22]/60 border transition-all ${
         isOver
-          ? 'border-indigo-500/60 bg-indigo-500/5 ring-2 ring-indigo-500/20'
-          : 'border-slate-800/80'
+          ? 'border-indigo-500/60 bg-indigo-500/10 dark:bg-indigo-500/5 ring-2 ring-indigo-500/20'
+          : 'border-slate-200 dark:border-[#30363d]'
       }`}
     >
       {/* Column Header */}
-      <div className="p-3.5 border-b border-slate-800/80 flex items-center justify-between">
+      <div className="p-3.5 border-b border-slate-200 dark:border-[#30363d] flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className={`w-2 h-2 rounded-full ${dotColors[id] || 'bg-slate-400'}`} />
-          <h3 className="text-xs font-bold text-slate-200 tracking-wide">{title}</h3>
-          <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 font-semibold border border-slate-700/60">
+          <h3 className="text-xs font-bold text-slate-800 dark:text-[#f0f6fc] tracking-wide">{title}</h3>
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded-full bg-slate-200 dark:bg-[#21262d] text-slate-700 dark:text-[#8b949e] font-semibold border border-slate-300 dark:border-[#30363d]">
             {tasks.length}
           </span>
         </div>
 
         <button
           onClick={() => onAddTask(id)}
-          className="p-1 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-colors"
+          className="p-1 text-slate-500 hover:text-slate-900 dark:text-[#8b949e] dark:hover:text-white rounded-lg hover:bg-slate-200/60 dark:hover:bg-[#21262d] transition-colors"
           title={`Add task to ${title}`}
         >
           <Plus className="w-4 h-4" />

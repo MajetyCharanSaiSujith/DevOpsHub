@@ -54,7 +54,7 @@ export default function RepositoryCard({ repo, onRemove }) {
   };
 
   return (
-    <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700/80 transition-all flex flex-col justify-between group">
+    <div className="p-5 rounded-2xl bg-white dark:bg-[#161b22] border border-slate-200 dark:border-[#30363d] hover:border-indigo-400 dark:hover:border-slate-700 transition-all flex flex-col justify-between group">
       <div>
         {/* Top bar */}
         <div className="flex items-start justify-between gap-3 mb-2">

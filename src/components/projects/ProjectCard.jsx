@@ -17,7 +17,7 @@ export default function ProjectCard({
   const projectMembers = members.filter((m) => project.members?.includes(m.id));
 
   return (
-    <div className="relative p-5 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700/80 transition-all hover:shadow-xl hover:shadow-indigo-500/5 flex flex-col justify-between group">
+    <div className="relative p-5 rounded-2xl bg-white dark:bg-[#161b22] border border-slate-200 dark:border-[#30363d] hover:border-indigo-400 dark:hover:border-slate-700 transition-all hover:shadow-md flex flex-col justify-between group">
       <div>
         {/* Top bar with tags & menu */}
         <div className="flex items-start justify-between gap-2 mb-3">

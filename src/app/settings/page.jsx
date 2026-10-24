@@ -263,40 +263,40 @@ export default function SettingsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
           <button
             type="button"
+            onClick={() => setTheme('light')}
+            className={`p-4 rounded-xl border flex items-center justify-between transition-all ${
+              theme === 'light'
+                ? 'bg-indigo-600/10 border-indigo-500 text-slate-900 shadow-sm ring-1 ring-indigo-500/20'
+                : 'bg-slate-800/40 border-slate-700/60 text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            <div className="flex items-center gap-3">
+              <Sun className="w-5 h-5 text-amber-500" />
+              <div className="text-left">
+                <span className="text-xs font-bold block">Realistic Light (Default)</span>
+                <span className="text-[11px] text-slate-400">Clean, crisp, modern SaaS light canvas</span>
+              </div>
+            </div>
+            {theme === 'light' && <Check className="w-4 h-4 text-indigo-600" />}
+          </button>
+
+          <button
+            type="button"
             onClick={() => setTheme('dark')}
             className={`p-4 rounded-xl border flex items-center justify-between transition-all ${
               theme === 'dark'
-                ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-sm'
-                : 'bg-slate-800/40 border-slate-800 text-slate-400 hover:text-slate-200'
+                ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-sm ring-1 ring-indigo-500/20'
+                : 'bg-slate-800/40 border-slate-700/60 text-slate-400 hover:text-slate-200'
             }`}
           >
             <div className="flex items-center gap-3">
               <Moon className="w-5 h-5 text-indigo-400" />
               <div className="text-left">
-                <span className="text-xs font-bold block">Charcoal Navy (Dark)</span>
-                <span className="text-[11px] text-slate-400">Standard developer theme</span>
+                <span className="text-xs font-bold block">GitHub Dark</span>
+                <span className="text-[11px] text-slate-400">Authentic GitHub canvas (#0d1117 & #161b22)</span>
               </div>
             </div>
             {theme === 'dark' && <Check className="w-4 h-4 text-indigo-400" />}
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setTheme('light')}
-            className={`p-4 rounded-xl border flex items-center justify-between transition-all ${
-              theme === 'light'
-                ? 'bg-indigo-600/20 border-indigo-500 text-white shadow-sm'
-                : 'bg-slate-800/40 border-slate-800 text-slate-400 hover:text-slate-200'
-            }`}
-          >
-            <div className="flex items-center gap-3">
-              <Sun className="w-5 h-5 text-amber-400" />
-              <div className="text-left">
-                <span className="text-xs font-bold block">Daylight Slate (Light)</span>
-                <span className="text-[11px] text-slate-400">Clean light contrast</span>
-              </div>
-            </div>
-            {theme === 'light' && <Check className="w-4 h-4 text-indigo-400" />}
           </button>
         </div>
       </div>

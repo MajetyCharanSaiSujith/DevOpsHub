@@ -69,17 +69,17 @@ export default function DashboardPage() {
 
       {/* Clean Slate Onboarding Banner */}
       {projects.length === 0 && tasks.length === 0 && (
-        <div className="p-6 rounded-2xl bg-gradient-to-r from-indigo-950/40 via-slate-900 to-violet-950/40 border border-indigo-500/30 shadow-xl relative overflow-hidden">
+        <div className="p-6 rounded-2xl bg-gradient-to-r from-indigo-50 via-white to-violet-50 dark:from-indigo-950/40 dark:via-[#161b22] dark:to-violet-950/40 border border-indigo-200 dark:border-indigo-500/30 shadow-sm relative overflow-hidden">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
             <div className="space-y-1.5 max-w-2xl">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[11px] font-semibold">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[11px] font-semibold">
                 <Sparkles className="w-3.5 h-3.5" />
                 Active Clean Workspace • Zero Dummy Data
               </div>
-              <h2 className="text-lg md:text-xl font-bold text-white tracking-tight">
+              <h2 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
                 Welcome to DevOpsHub, {user?.name || 'Developer'}!
               </h2>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Your engineering workspace has been created with a clean slate. Track projects, organize sprint tasks on the Kanban board, sync GitHub repositories, and record releases.
               </p>
             </div>

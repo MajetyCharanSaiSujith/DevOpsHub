@@ -71,7 +71,7 @@ function LoginContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center p-4 bg-[#090d16] text-slate-100">
+    <div className="min-h-screen flex flex-col justify-center items-center p-4 bg-[#f6f8fa] dark:bg-[#0d1117] text-slate-900 dark:text-[#c9d1d9] transition-colors">
       {/* Background radial gradient glow */}
       <div className="absolute w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none -top-20 -left-20" />
       <div className="absolute w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-3xl pointer-events-none -bottom-20 -right-20" />
